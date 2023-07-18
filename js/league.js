@@ -215,7 +215,7 @@ class League extends HTMLElement {
     }
 
     changeStyles() {
-        // Generar un color de fondo aleatorio en formato hexadecimal
+        
         if (!this.stylesChanged) {
             this.$league.style.display = 'flex';
             this.$league.style.flexWrap = 'wrap';
@@ -231,7 +231,7 @@ class League extends HTMLElement {
             });
             this.stylesChanged = true;
         } else {
-            // Revertir los cambios
+            // Revert changes
             this.$league.style.backgroundColor = '';
             this.$league.style.display = '';
             this.$league.style.flexWrap = '';
@@ -242,7 +242,7 @@ class League extends HTMLElement {
                 item.style.boxSizing = '';
             });
 
-            this.stylesChanged = false; // Actualizar el estado de los estilos
+            this.stylesChanged = false; 
         }
     }
 
@@ -359,7 +359,7 @@ class League extends HTMLElement {
             const hour = localDate.getHours();
             const min = localDate.getMinutes();
 
-            // Formateas la fecha y la hora en el formato "dd/mm/yyyy hh:mm"
+            // Format "dd/mm/yyyy hh:mm"
             const date = `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year} ${hour.toString().padStart(2, '0')}:${min.toString().padStart(2, '0')}`;
 
 
