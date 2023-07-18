@@ -187,20 +187,31 @@ class League extends HTMLElement {
         this.getEvents(this.leagueId);
 
         const $container = document.createElement('div');
-        $container.style.position = 'relative'; // Para que el botón se posicione correctamente
+        $container.style.position = 'relative';
+        $container.innerText = 'Inglaterra - Premier League';
+        $container.style.marginLeft = '5px'; 
+        $container.style.marginBottom = '20px'; 
+        $container.style.fontSize = '25px';
+        $container.style.fontWeight = '600';  
+        $container.style.color = '#00b925'; 
 
-        // Agregar botón al contenedor
+        const $container2 = document.createElement('div');
+        $container2.style.position = 'relative';
+
+        // Add button to container
         const $button = document.createElement('button');
         $button.innerText = 'Change view';
         $button.addEventListener('click', this.changeStyles.bind(this));
-        $container.appendChild($button);
+        $container2.appendChild($button);
 
-        // Agregar #league al contenedor
+        // Add #league to container
         this.$league = this._shadowRoot.querySelector('#league');
-        $container.appendChild(this.$league);
+        $container2.appendChild(this.$league);
 
-        // Agregar el contenedor al shadow DOM
+        // Add to container to shadow DOM
         this._shadowRoot.appendChild($container);
+        this._shadowRoot.appendChild($container2);
+
     }
 
     changeStyles() {
